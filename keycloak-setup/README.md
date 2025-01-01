@@ -16,21 +16,21 @@ Install Certbot and obtain an SSL certificate for your domain. make sure your ho
 
   # Obtain SSL certificate
   # sudo certbot certonly --standalone -d <Keycloak server domain> -m <your email> --agree-tos
-  sudo certbot certonly --standalone -d keycloak-shiv.duckdns.org -m test@gamil.com --agree-tos
+  sudo certbot certonly --standalone -d iam.dounotech.com -m douno30@gmail.com --agree-tos
 ```
-## Clone [Devops](https://github.com/anil503rgpv/DevOps.git) repo
+## Clone [Devops](https://github.com/iamquechua/DevOps.git) repo
 ```
-git clone https://github.com/anil503rgpv/DevOps.git
+git clone https://github.com/iamquechua/DevOps.git
 ```
 ## Before Running docker compose changes must be done set-env.sh file run the same
 ```shell
 # update below property as per setup
-export KC_HOSTNAME_URL=https://keycloak-shiv.duckdns.org
+export KC_HOSTNAME_URL=https://iam.dounotech.com
 export POSTGRES_USER=XXXX
 export POSTGRES_DB=XXXX
 export POSTGRES_PASSWORD=XXXX
-export KEYCLOAK_FRONTEND_URL=https://keycloak-shiv.duckdns.org/auth
-export KEYCLOAK_HOSTNAME=keycloak-shiv.duckdns.org
+export KEYCLOAK_FRONTEND_URL=https://iam.dounotech.com/auth
+export KEYCLOAK_HOSTNAME=iam.dounotech.com
 
 # After updating set-env.sh file then just execute on host
 source ./set-env.sh
@@ -38,8 +38,8 @@ source ./set-env.sh
 Check below property for nginx.conf and update correct server host 
 ```config
 server_name keycloak-shiv.duckdns.org;
-ssl_certificate "/etc/letsencrypt/live/keycloak-shiv.duckdns.org/fullchain.pem";
-ssl_certificate_key "/etc/letsencrypt/live/keycloak-shiv.duckdns.org/privkey.pem";
+ssl_certificate "/etc/letsencrypt/live/iam.dounotech.com/fullchain.pem";
+ssl_certificate_key "/etc/letsencrypt/live/iam.dounotech.com/privkey.pem";
 ```
 
 ## Running keycloak server
